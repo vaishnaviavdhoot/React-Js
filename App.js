@@ -1,7 +1,9 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 const parent = React.createElement("div",{id:"parent"},
                [React.createElement("div",{id:"child 1"},
-               [React.createElement("h1",{id:"heading"},"Hi its a parent child hierarchy 1"),
-                React.createElement("h2",{id:"heading"},"Hi its a parent child hierarchy 2")
+               [React.createElement("h1",{id:"heading"},"Hi its a parent child hierarchy 1 😁😁😁😁"),
+                React.createElement("h2",{id:"heading"},"Hi its a parent child hierarchy 2 🤷‍♂️🤷‍♂️🤷‍♂️🤷‍♂️")
                ]
             ),
             React.createElement("div",{id:"child 2"},
