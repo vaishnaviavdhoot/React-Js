@@ -65,3 +65,20 @@
     font-size: 16px;
     cursor: pointer;
 }
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    /* justify-content: center; */
+}
+.shimmer-card{
+    border: 1px solid black;
+    width: 200px;
+    background-color: #DBE2E9;
+    height: 350px;
+    margin: 10px;
+    padding: 10px;
+}
+.search-btn{
+    margin-right: 10px;
+}
