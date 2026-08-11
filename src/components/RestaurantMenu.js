@@ -1,7 +1,10 @@
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 export const RestaurantMenu = () => {
-    const fetchMenu = async () => {
+const resId = useParams()
+console.log('resId : ',resId)
+const fetchMenu = async () => {
         try {
             const response = await fetch(
     "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9985859&lng=77.59202060000001&restaurantId=10591&catalog_qa=undefined&submitAction=ENTER",

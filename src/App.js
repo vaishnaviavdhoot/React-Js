@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import { Header } from "./components/Header";
 import { Body } from "./components/Body";
@@ -7,8 +7,22 @@ import { AboutUs } from "./components/AboutUs";
 import { ContactUs } from "./components/ContactUs";
 import { Cart } from "./components/Cart";
 import { Error } from "./components/Error";
-// import { RestaurantMenu } from "./components/RestaurantMenu";
+import { RestaurantMenu } from "./components/RestaurantMenu";
+
+/***
+ * Chunking
+ * code splittinf
+ * Dynamic Bundling
+ * lazy loading
+ * on Demand loading
+ * dynamic import 
+ */
+
+const Grocery = lazy(() => import("./components/Grocery"));
+
 const AppLayout = () => {
+  // Custom Hook
+    
   return (
     <div className="app">
       {/* Header */}
@@ -38,10 +52,14 @@ const appRouter = createBrowserRouter([
           path: "/cart",
           element: <Cart />
         },
-        // {
-        //   path: "/restaurant/:resId",
-        //   element: <RestaurantMenu />
-        // }
+        {
+          path: "/grocery",
+          element:( <Suspense fallback={<h1>Loading ....</h1>}> <Grocery /></Suspense> )
+        },
+        {
+          path: "/restaurant/:resId",
+          element: <RestaurantMenu />
+        }
           ],
           errorElement: <Error />
         },
