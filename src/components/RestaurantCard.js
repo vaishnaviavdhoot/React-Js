@@ -4,13 +4,13 @@ export const RestaurantCard = (props) => {
   const { cloudinaryImageId, name, cuisines, avgRating } =
     restaurantData?.card?.card?.info || restaurantData?.info;
   return (
-    <div className="restaurant-card" style={{ backgroundColor: "#DBE2E9" }}>
+    <div className="m-2 p-2 w-[250px] h-[500px] rounded-lg shadow-lg bg-gray-100 hover:bg-gray-200">
       <img
-        className="restaurant-logo"
+        className="rounded-lg"
         src={ CDN_URL + cloudinaryImageId }
         alt="restaurant-logo"
       />
-      <h3>{name}</h3>
+      <h3 className="font-bold py-2 text-lg">{name}</h3>
       <h4>{cuisines?.join(", ")}</h4>
       <h4>{avgRating} ⭐</h4>
       <h4>{restaurantData?.card?.card?.info.sla?.deliveryTime} mins</h4>

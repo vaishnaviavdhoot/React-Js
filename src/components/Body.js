@@ -37,18 +37,21 @@ export const Body = () => {
     setSearchText("");
     setData(allRestaurants);
   };
-        if (onlineStatus === false){
-          return(
-            <h1>Looks like you're offline!!! Please check your Internet Connection.</h1>
-          )
-        }
+  if (onlineStatus === false) {
+    return (
+      <h1>
+        Looks like you're offline!!! Please check your Internet Connection.
+      </h1>
+    );
+  }
   return data.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="search">
+    <div className="">
+      <div className="flex justify-center items-center gap-2 m-4">
         <input
           type="text"
+          className=" border border-solid border-black"
           placeholder="Search for restaurants"
           value={searchText}
           onChange={(e) => {
@@ -58,19 +61,20 @@ export const Body = () => {
             setSearchText(e.target.value);
           }}
         />
-        <button className="search-btn" onClick={handleSearchClick}>
+        <button className="px-4 py-1 bg-green-100 m-2 rounded-lg" onClick={handleSearchClick}>
           Search
         </button>
-        <button className="clear-search-btn" onClick={handleClearSearch}>
+        <button className="px-4 py-1 bg-green-100 m-2 rounded-lg" onClick={handleClearSearch}>
           Clear Search
         </button>
+        
       </div>
-      <div className="filter">
-        <button className="filter-btn" onClick={handleTopRatedClick}>
+      <div className="flex justify-center items-center">
+        <button className="px-4  py-1 bg-green-100 m-2 rounded-lg" onClick={handleTopRatedClick}>
           Top Rated Restaurants
         </button>
       </div>
-      <div className="restaurant-container">
+      <div className="flex flex-wrap justify-center items-center">
         {data.map((card) => (
           <RestaurantCard
             key={card?.card?.card?.info?.id || card?.info?.id}

@@ -10,8 +10,8 @@ export const ContactUs = () => {
     );
   }
   return (
-    <div className="contact-us">
-      <h1>Contact Us</h1>
+    <div className="m-2 p-2">
+      <h1 className="flex justify-center text-4xl font-bold mb-2">Contact Us</h1>
       <p>
         We'd love to hear from you! If you have any questions or feedback,
         please don't hesitate to reach out. You can contact us via email at

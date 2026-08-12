@@ -13,9 +13,9 @@ export const AboutUs = () => {
     );
   }
   return (
-    <div className="about-us">
-      <h1>About Us</h1>
-      <p>
+    <div className="m-2 p-2">
+      <h1 className="flex justify-center text-4xl font-bold mb-2">About Us</h1>
+      <p className="">
         Welcome to our restaurant! We are passionate about serving delicious
         food and providing a memorable dining experience. Our team of talented
         chefs uses the finest ingredients to create a diverse menu that caters

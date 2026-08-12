@@ -10,8 +10,8 @@ export const Cart = () => {
     );
   }
   return (
-    <div className="cart">
-      <h1>Shopping Cart</h1>
+     <div className="m-2 p-2">
+      <h1 className="flex justify-center text-4xl font-bold mb-2">Shopping Cart</h1>
       <p>
         Your cart is currently empty. Add some delicious items from our menu!
       </p>
