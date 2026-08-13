@@ -1,6 +1,7 @@
 import { User } from "./User.js";
 import { UserClass } from "./UserClass.js";
 import { useOnlineStatus } from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext.js";
 
 export const AboutUs = () => {
   // Custom Hook
@@ -15,6 +16,7 @@ export const AboutUs = () => {
   return (
     <div className="m-2 p-2">
       <h1 className="flex justify-center text-4xl font-bold mb-2">About Us</h1>
+
       <p className="">
         Welcome to our restaurant! We are passionate about serving delicious
         food and providing a memorable dining experience. Our team of talented
@@ -23,6 +25,8 @@ export const AboutUs = () => {
         meal, we have something for everyone. Join us and indulge in the flavors
         that will leave you coming back for more!
       </p>
+            <div className="flex font-bold">User: <UserContext.Consumer>{(data)=><h2>{data.loggedInUser}</h2>}</UserContext.Consumer>
+      </div>
       <User
         name="Vaishnavi"
         location="Jalna"
