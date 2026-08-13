@@ -9,6 +9,9 @@ import { Cart } from "./components/Cart";
 import { Error } from "./components/Error";
 import { RestaurantMenu } from "./components/RestaurantMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+
 /***
  * Chunking
  * code splittinf
@@ -33,6 +36,7 @@ const AppLayout = () => {
     setUserInfo(data.name);
   }, []);
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo }}>
       <div className="app">
         {/* <UserContext.Provider value={{loggedInUser: userInfo}}> */}
@@ -42,6 +46,7 @@ const AppLayout = () => {
         <Outlet />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([

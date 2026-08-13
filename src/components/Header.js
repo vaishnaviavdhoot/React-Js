@@ -3,11 +3,14 @@ import { LOGO_URL } from "../utils/constants.js";
 import { Link } from "react-router-dom";
 import { useOnlineStatus } from "../utils/useOnlineStatus.js";
 import  UserContext  from "../utils/UserContext.js";
+import { useSelector } from "react-redux";
 
 export const Header = (props) => {
 const [btn, setBtn] = useState('Login')
 const onlineStatus = useOnlineStatus();
 const {loggedInUser} = useContext(UserContext);
+const cartItems = useSelector((store)=> store.cart.items);
+
 const handleClick=()=>{
     btn ==='Login' ? setBtn('LogOut') :setBtn('Login')
 }
@@ -27,7 +30,7 @@ const handleClick=()=>{
           <li className="px-3"><Link to="/about">About Us</Link></li>
           <li className="px-3"><Link to="/contact">Contact Us</Link></li>
           <li className="px-3"><Link to="/grocery">Grocery</Link></li>
-          <li className="px-3"><Link to="/cart">Cart</Link></li>
+          <li className="px-3"><Link to="/cart">Cart - ({cartItems.length})</Link></li>
           <li className="px-3"><button onClick={handleClick}>{btn}</button></li>
           <li className="px-3 font-bold">{loggedInUser}</li>
           {/* <li className="px-3">{props.user ? props.user :"Default User"}</li> */}
