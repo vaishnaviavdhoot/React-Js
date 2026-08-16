@@ -48,3 +48,20 @@
  - Slice (cartSlice)
  - dispatch(action)
  - Selector
+
+ # Types of testing (developer)
+ - Unit Testing
+ - Integration Testing
+ - End to End Testing - e2e Testing
+
+ # Setting up Testing in our app
+ - Install React Testing Library
+ - Installed jest
+ - Install Babel dependencies
+ - Configure Babel
+ - Configure parcel config file to disable default babel transpilation
+ - Jest Configuration - npx create-jest
+ - Install jsdom library
+ - Install @babel/preset-react to make jsx work in test cases
+ - Include @babel/preset-react inside my babel config
+ - Install @testing-library/jest-dom

@@ -53,6 +53,7 @@ export const Body = () => {
       <div className="flex justify-center items-center gap-2 m-4">
         <input
           type="text"
+          data-testid = "searchInput"
           className=" border border-solid border-black"
           placeholder="Search for restaurants"
           value={searchText}

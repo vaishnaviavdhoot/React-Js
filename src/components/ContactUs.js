@@ -18,6 +18,12 @@ export const ContactUs = () => {
         info@ourrestaurant.com or by phone at (123) 456-7890. Our team is always
         here to help and ensure you have the best dining experience possible.
       </p>
+      <form className="flex justify-center m-10">
+        <input type="text" className="border border-black p-2 m-2 rounded-lg"  placeholder="name"/>
+        <input type="text" className="border border-black p-2 m-2 rounded-lg"  placeholder="message"/>
+        <button type="button" className="border border-black p-2 m-2 bg-gray-100 rounded-lg">Submit</button>
+
+      </form>
     </div>
   );
 };

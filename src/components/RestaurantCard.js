@@ -16,7 +16,7 @@ export const RestaurantCard = (props) => {
   };
 
   return (
-    <div className="m-2 p-2 w-[250px] h-[500px] rounded-lg shadow-lg bg-gray-100 hover:bg-gray-200">
+    <div data-testid="resCard" className="m-2 p-2 w-[250px] h-[500px] rounded-lg shadow-lg bg-gray-100 hover:bg-gray-200">
       <img
         className="rounded-lg"
         src={CDN_URL + cloudinaryImageId}
@@ -25,7 +25,7 @@ export const RestaurantCard = (props) => {
       <h3 className="font-bold py-2 text-lg">{name}</h3>
       <h4>{cuisines?.join(", ")}</h4>
       <h4>{avgRating} ⭐</h4>
-      <h4>{restaurantData?.card?.card?.info.sla?.deliveryTime} mins</h4>
+      <h4>{restaurantData?.info.sla?.deliveryTime} mins</h4>
       <button
         className="p-2 bg-green-100 rounded-lg"
         onClick={() => handleAddItem(restaurantData)}
